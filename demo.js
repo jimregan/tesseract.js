@@ -11,15 +11,17 @@ var drop_instructions = [].slice.call(document.querySelectorAll('.drop-instructi
 var options = [].slice.call(document.querySelectorAll('.option'))
 
 // var octx = output.getContext('2d')
-var language = 'eng'
+var language = 'gle'
 var demoStarted = false
 var lang_demo_images = {
+	gle: 'img/gle_bw.png',
 	eng: 'img/eng_bw.png',
 	chi_sim: 'img/chi_sim.png',
 	rus: 'img/rus.png'
 }
 
 var lang_drop_instructions = {
+	gle: 'an Irish',
 	eng: 'an English',
 	chi_sim: 'a Chinese',
 	rus: 'a Russian'
@@ -53,8 +55,8 @@ function startDemo(){
 
 	async function start(){
     await worker.load();
-    await worker.loadLanguage('eng');
-    await worker.initialize('eng');
+    await worker.loadLanguage('gle');
+    await worker.initialize('gle');
     const { data } = await worker.recognize(input);
     result(data);
 
